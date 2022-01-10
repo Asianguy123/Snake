@@ -7,3 +7,15 @@ import sys
 import pygame
 import random
 from pygame.math import Vector2
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Classes
+
+class Snake():
+  pass
+
+class Fruit():
+  pass
+
+class Main():
+  pass
