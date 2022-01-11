@@ -12,7 +12,10 @@ from pygame.math import Vector2
 # Classes
 
 class Snake():
-  pass
+    def __init__(self):
+        self.body = [Vector2(7, 10), Vector2(6, 10), Vector2(5, 10)]
+        self.direction = Vector2(1, 0)
+        self.new_block = False
 
 
 class Fruit():
