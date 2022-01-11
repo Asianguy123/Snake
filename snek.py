@@ -34,6 +34,11 @@ def main():
 
 pygame.init()
 CLOCK = pygame.time.Clock()
+CELL_SIZE = 20
+CELL_NUMBER = 40
+SCREEN_WIDTH = CELL_NUMBER * CELL_SIZE
+SCREEN_HEIGHT = CELL_NUMBER * CELL_SIZE
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Runs Program
