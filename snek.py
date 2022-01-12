@@ -13,9 +13,10 @@ from pygame.math import Vector2
 
 class Snake():
     def __init__(self):
-        self.body = [Vector2(7, 10), Vector2(6, 10), Vector2(5, 10)]
-        self.direction = Vector2(1, 0)
+        self.body = [Vector2(20, 20), Vector2(19, 20), Vector2(18, 20)]
+        self.direction = Vector2(0, 0)
         self.new_block = False
+        self.crunch_sound = pygame.mixer.Sound('Sound/crunch.wav')
 
 
 class Fruit():
