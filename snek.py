@@ -21,7 +21,12 @@ class Snake():
 
 class Fruit():
     def __init__(self):
-        self.randomise()
+        self.randomise()     
+    
+    def randomise(self):
+        self.x = random.randint(0, CELL_NUMBER - 1)
+        self.y = random.randint(0, CELL_NUMBER - 1) 
+        self.pos = Vector2(self.x, self.y)
 
 
 class Main():
