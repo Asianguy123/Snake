@@ -17,6 +17,11 @@ class Snake():
         self.direction = Vector2(0, 0)
         self.new_block = False
         self.crunch_sound = pygame.mixer.Sound('Sound/crunch.wav')
+        
+        self.head_up = pygame.image.load('Graphics/head_up.png').convert_alpha()
+        self.head_down = pygame.image.load('Graphics/head_down.png').convert_alpha()
+        self.head_right = pygame.image.load('Graphics/head_right.png').convert_alpha()
+        self.head_left = pygame.image.load('Graphics/head_left.png').convert_alpha()
 
 
 class Fruit():
