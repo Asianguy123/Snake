@@ -35,6 +35,15 @@ class Snake():
         self.body_tl = pygame.image.load('Graphics/body_tl.png').convert_alpha()
         self.body_br = pygame.image.load('Graphics/body_br.png').convert_alpha()
         self.body_bl = pygame.image.load('Graphics/body_bl.png').convert_alpha()
+        
+    def draw_snake(self):
+        self.update_head_graphics()
+        self.update_tail_graphics()
+
+        for index, block in enumerate(self.body):
+            x_pos = int(block.x * CELL_SIZE)
+            y_pos = int(block.y * CELL_SIZE)
+            block_rect = pygame.Rect(x_pos, y_pos, CELL_SIZE, CELL_SIZE)       
 
 
 class Fruit():
