@@ -22,6 +22,14 @@ class Snake():
         self.head_down = pygame.image.load('Graphics/head_down.png').convert_alpha()
         self.head_right = pygame.image.load('Graphics/head_right.png').convert_alpha()
         self.head_left = pygame.image.load('Graphics/head_left.png').convert_alpha()
+        
+        self.tail_up = pygame.image.load('Graphics/tail_up.png').convert_alpha()
+        self.tail_down = pygame.image.load('Graphics/tail_down.png').convert_alpha()
+        self.tail_right = pygame.image.load('Graphics/tail_right.png').convert_alpha()
+        self.tail_left = pygame.image.load('Graphics/tail_left.png').convert_alpha()
+
+        self.body_vertical = pygame.image.load('Graphics/body_vertical.png').convert_alpha()
+        self.body_horizontal = pygame.image.load('Graphics/body_horizontal.png').convert_alpha()
 
 
 class Fruit():
