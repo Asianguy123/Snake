@@ -49,7 +49,15 @@ class Snake():
                 SCREEN.blit(self.head, block_rect)
             elif index == len(self.body) - 1:
                 SCREEN.blit(self.tail, block_rect)
+            
+            else:
+                previous_block = self.body[index + 1] - block
+                next_block = self.body[index - 1] - block
 
+                if previous_block.x == next_block.x:
+                    SCREEN.blit(self.body_vertical, block_rect)
+                elif previous_block.y == next_block.y:
+                    SCREEN.blit(self.body_horizontal, block_rect)
 
 class Fruit():
     def __init__(self):
