@@ -80,6 +80,17 @@ class Snake():
         elif head_body_vector == Vector2(0, -1):
             self.head = self.head_down
             
+    def update_tail_graphics(self):
+        tail_body_vector = self.body[-2] - self.body[-1]
+        if tail_body_vector == Vector2(1, 0):
+            self.tail = self.tail_left
+        elif tail_body_vector == Vector2(-1, 0):
+            self.tail = self.tail_right
+        elif tail_body_vector == Vector2(0, 1):
+            self.tail = self.tail_up
+        elif tail_body_vector == Vector2(0, -1):
+            self.tail = self.tail_down
+            
             
 class Fruit():
     def __init__(self):
