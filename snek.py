@@ -69,6 +69,18 @@ class Snake():
                     elif (previous_block.x == 1 and next_block.y == 1) or (previous_block.y == 1 and next_block.x == 1):
                         SCREEN.blit(self.body_br, block_rect)    
 
+    def update_head_graphics(self):
+        head_body_vector = self.body[1] - self.body[0]
+        if head_body_vector == Vector2(1, 0):
+            self.head = self.head_left
+        elif head_body_vector == Vector2(-1, 0):
+            self.head = self.head_right
+        elif head_body_vector == Vector2(0, 1):
+            self.head = self.head_up
+        elif head_body_vector == Vector2(0, -1):
+            self.head = self.head_down
+            
+            
 class Fruit():
     def __init__(self):
         self.randomise()
