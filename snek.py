@@ -43,7 +43,12 @@ class Snake():
         for index, block in enumerate(self.body):
             x_pos = int(block.x * CELL_SIZE)
             y_pos = int(block.y * CELL_SIZE)
-            block_rect = pygame.Rect(x_pos, y_pos, CELL_SIZE, CELL_SIZE)       
+            block_rect = pygame.Rect(x_pos, y_pos, CELL_SIZE, CELL_SIZE)    
+            
+            if index == 0:
+                SCREEN.blit(self.head, block_rect)
+            elif index == len(self.body) - 1:
+                SCREEN.blit(self.tail, block_rect)
 
 
 class Fruit():
