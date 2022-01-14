@@ -58,6 +58,16 @@ class Snake():
                     SCREEN.blit(self.body_vertical, block_rect)
                 elif previous_block.y == next_block.y:
                     SCREEN.blit(self.body_horizontal, block_rect)
+                    
+                else:
+                    if (previous_block.x == -1 and next_block.y == -1) or (previous_block.y == -1 and next_block.x == -1):
+                        SCREEN.blit(self.body_tl, block_rect)
+                    elif (previous_block.x == -1 and next_block.y == 1) or (previous_block.y == 1 and next_block.x == -1):
+                        SCREEN.blit(self.body_bl, block_rect)
+                    elif (previous_block.x == 1 and next_block.y == -1) or (previous_block.y == -1 and next_block.x == 1):
+                        SCREEN.blit(self.body_tr, block_rect)
+                    elif (previous_block.x == 1 and next_block.y == 1) or (previous_block.y == 1 and next_block.x == 1):
+                        SCREEN.blit(self.body_br, block_rect)    
 
 class Fruit():
     def __init__(self):
