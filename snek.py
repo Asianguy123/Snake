@@ -90,7 +90,13 @@ class Snake():
             self.tail = self.tail_up
         elif tail_body_vector == Vector2(0, -1):
             self.tail = self.tail_down
-            
+
+    def move_snake(self):
+        if self.new_block:
+            body_copy = self.body[:]
+            body_copy.insert(0, body_copy[0] + self.direction)
+            self.body = body_copy[:]
+            self.new_block = False            
             
 class Fruit():
     def __init__(self):
