@@ -103,6 +103,9 @@ class Snake():
             body_copy.insert(0, body_copy[0] + self.direction)
             self.body = body_copy[:]
             
+    def add_block(self):
+        self.new_block = True            
+            
             
 class Fruit():
     def __init__(self):
