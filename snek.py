@@ -108,6 +108,10 @@ class Snake():
         
     def play_sound(self):
         self.crunch_sound.play()        
+        
+    def reset(self, apple_reset):
+        self.body = [Vector2(20, 20), Vector2(19, 20), Vector2(18, 20)]
+        self.direction = Vector2(0, 0)        
             
             
 class Fruit():
