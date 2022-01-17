@@ -105,6 +105,9 @@ class Snake():
             
     def add_block(self):
         self.new_block = True            
+        
+    def play_sound(self):
+        self.crunch_sound.play()        
             
             
 class Fruit():
