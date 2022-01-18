@@ -138,6 +138,12 @@ class Main():
         self.check_fruit_collision()
         self.check_fail()
     
+    def draw_elements(self):
+        self.draw_grass()
+        self.fruit.draw_fruit()
+        self.snake.draw_snake()
+        self.draw_score()
+        
     
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
