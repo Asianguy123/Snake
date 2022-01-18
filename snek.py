@@ -133,7 +133,12 @@ class Main():
         self.snake = Snake()
         self.fruit = Fruit()
 
-
+    def update(self):
+        self.snake.move_snake()
+        self.check_fruit_collision()
+        self.check_fail()
+    
+    
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
