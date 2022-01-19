@@ -144,6 +144,11 @@ class Main():
         self.snake.draw_snake()
         self.draw_score()
         
+    def check_fruit_collision(self):
+        if self.fruit.pos == self.snake.body[0]:
+            self.snake.play_sound()
+            self.fruit.randomise()
+            self.snake.add_block()
     
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
