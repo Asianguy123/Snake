@@ -150,6 +150,11 @@ class Main():
             self.fruit.randomise()
             self.snake.add_block()
     
+        for block in self.snake.body[1:]:
+            if block == self.fruit.pos:
+                self.fruit.randomise()
+                
+                
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
