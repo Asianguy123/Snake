@@ -165,6 +165,12 @@ class Main():
     def game_over(self):
         self.snake.reset()
         
+    def draw_grass(self):
+        grass_colour = (167, 209, 61)
+        for row in range(CELL_NUMBER):
+            if row % 2 == 0:
+                for col in range(CELL_NUMBER):
+                    pass
         
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
