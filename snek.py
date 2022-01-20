@@ -153,7 +153,10 @@ class Main():
         for block in self.snake.body[1:]:
             if block == self.fruit.pos:
                 self.fruit.randomise()
-                
+
+    def check_fail(self):
+        if not (0 <= self.snake.body[0].x < CELL_NUMBER) or not (0 <= self.snake.body[0].y < CELL_NUMBER):
+            self.game_over()                
                 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
