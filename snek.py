@@ -109,7 +109,7 @@ class Snake():
     def play_sound(self):
         self.crunch_sound.play()
 
-    def reset(self, apple_reset):
+    def reset(self):
         self.body = [Vector2(20, 20), Vector2(19, 20), Vector2(18, 20)]
         self.direction = Vector2(0, 0)
         
@@ -137,19 +137,19 @@ class Main():
         self.snake.move_snake()
         self.check_fruit_collision()
         self.check_fail()
-    
+
     def draw_elements(self):
         self.draw_grass()
         self.fruit.draw_fruit()
         self.snake.draw_snake()
         self.draw_score()
-        
+
     def check_fruit_collision(self):
         if self.fruit.pos == self.snake.body[0]:
             self.snake.play_sound()
             self.fruit.randomise()
             self.snake.add_block()
-    
+        
         for block in self.snake.body[1:]:
             if block == self.fruit.pos:
                 self.fruit.randomise()
@@ -160,23 +160,24 @@ class Main():
         
         for block in self.snake.body[1:]:
             if block == self.snake.body[0]:
-                self.game_over()              
-                
+                self.game_over()
+
     def game_over(self):
         self.snake.reset()
-        
+
     def draw_grass(self):
         grass_colour = (167, 209, 61)
         for row in range(CELL_NUMBER):
             if row % 2 == 0:
                 for col in range(CELL_NUMBER):
-                    pass
-                
+                    if col % 2 == 0:
+                        grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
+                        pygame.draw.rect(SCREEN, grass_colour, grass_rect)
             else:
                 for col in range(CELL_NUMBER):
                     if col % 2:
                         grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
-                        pygame.draw.rect(SCREEN, grass_colour, grass_rect)               
+                        pygame.draw.rect(SCREEN, grass_colour, grass_rect)             
         
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
