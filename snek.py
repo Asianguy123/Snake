@@ -171,6 +171,12 @@ class Main():
             if row % 2 == 0:
                 for col in range(CELL_NUMBER):
                     pass
+                
+            else:
+                for col in range(CELL_NUMBER):
+                    if col % 2:
+                        grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
+                        pygame.draw.rect(SCREEN, grass_colour, grass_rect)               
         
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
