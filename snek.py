@@ -179,6 +179,18 @@ class Main():
                         grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                         pygame.draw.rect(SCREEN, grass_colour, grass_rect)            
         
+    def draw_score(self):
+        score_text = str(len(self.snake.body) - 3)
+        score_surf = game_font.render(score_text, 1, (0, 0, 0))
+        score_x = int(CELL_SIZE * CELL_NUMBER) - 60
+        score_y = int(CELL_SIZE * CELL_NUMBER) - 40
+        score_rect = score_surf.get_rect(center = (score_x, score_y))
+        apple_rect = apple.get_rect(midright = (score_rect.left - 5, score_rect.centery))
+
+        SCREEN.blit(score_surf, score_rect)
+        SCREEN.blit(apple, apple_rect)    
+            
+            
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
