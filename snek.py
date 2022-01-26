@@ -201,12 +201,17 @@ def main():
 # Constants
 
 pygame.init()
+pygame.mixer.pre_init(44100, -16, 2, 512)
 CLOCK = pygame.time.Clock()
 CELL_SIZE = 20
 CELL_NUMBER = 40
 SCREEN_WIDTH = CELL_NUMBER * CELL_SIZE
 SCREEN_HEIGHT = CELL_NUMBER * CELL_SIZE
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Snek | Asianguy_123')
+main_game = Main()
+apple = pygame.image.load('Graphics/apple.png').convert_alpha()
+game_font = pygame.font.Font('Font/PoetsenOne-Regular.ttf', 25)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Runs Program
