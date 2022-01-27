@@ -195,7 +195,9 @@ class Main():
 # Main Function
 
 def main():
-    pass
+    timer = 80
+    SCREEN_UPDATE = pygame.USEREVENT
+    pygame.time.set_timer(SCREEN_UPDATE, timer)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Constants
