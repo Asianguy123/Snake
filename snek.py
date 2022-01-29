@@ -208,6 +208,11 @@ def main():
             if event.type == SCREEN_UPDATE:
                 main_game.update()
 
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    if main_game.snake.direction.y != 1:
+                        main_game.snake.direction = Vector2(0, -1)
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Constants
