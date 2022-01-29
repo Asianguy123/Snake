@@ -221,6 +221,10 @@ def main():
                     if main_game.snake.direction.x != -1:
                         main_game.snake.direction = Vector2(1, 0)
 
+                if event.key == pygame.K_LEFT:
+                    if main_game.snake.direction.x != 1:
+                        main_game.snake.direction = Vector2(-1, 0)
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Constants
