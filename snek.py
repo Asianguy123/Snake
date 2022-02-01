@@ -177,8 +177,8 @@ class Main():
                 for col in range(CELL_NUMBER):
                     if col % 2:
                         grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
-                        pygame.draw.rect(SCREEN, grass_colour, grass_rect)            
-        
+                        pygame.draw.rect(SCREEN, grass_colour, grass_rect)
+
     def draw_score(self):
         score_text = str(len(self.snake.body) - 3)
         score_surf = game_font.render(score_text, 1, (0, 0, 0))
@@ -188,9 +188,9 @@ class Main():
         apple_rect = apple.get_rect(midright = (score_rect.left - 5, score_rect.centery))
 
         SCREEN.blit(score_surf, score_rect)
-        SCREEN.blit(apple, apple_rect)    
-            
-            
+        SCREEN.blit(apple, apple_rect)
+
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Main Function
 
@@ -224,6 +224,11 @@ def main():
                 if event.key == pygame.K_LEFT:
                     if main_game.snake.direction.x != 1:
                         main_game.snake.direction = Vector2(-1, 0)
+                
+        SCREEN.fill((175, 215, 70))
+        main_game.draw_elements()
+        pygame.display.update()
+        CLOCK.tick(60)
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
