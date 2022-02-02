@@ -103,7 +103,11 @@ class Snake():
                         SCREEN.blit(self.body_br, block_rect)                        
             
     def update_head_graphics(self):
-        head_body_vector = self.body[1] - self.body[0]
+        '''
+        Checks direction of travel of snake, then assigns necessary head image
+        '''
+
+        head_body_vector = self.body[1] - self.body[0] # getting vector of head direction
         if head_body_vector == Vector2(1, 0):
             self.head = self.head_left
         elif head_body_vector == Vector2(-1, 0):
@@ -114,7 +118,11 @@ class Snake():
             self.head = self.head_down
 
     def update_tail_graphics(self):
-        tail_body_vector = self.body[-2] - self.body[-1]
+        '''
+        Checks direction of travel of tail, then assigns necessary tail image
+        '''
+
+        tail_body_vector = self.body[-2] - self.body[-1] # getting vector of tail direction
         if tail_body_vector == Vector2(1, 0):
             self.tail = self.tail_left
         elif tail_body_vector == Vector2(-1, 0):
