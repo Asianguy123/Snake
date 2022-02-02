@@ -133,13 +133,19 @@ class Snake():
             self.tail = self.tail_down
 
     def move_snake(self):
+        '''
+        Moves snake in direction of vector, or adds new block when fruit is consumed
+        '''
+
+        # checks if new block is needed, if yes then copies body and adds extra block
         if self.new_block:
             body_copy = self.body[:]
             body_copy.insert(0, body_copy[0] + self.direction)
             self.body = body_copy[:]
             self.new_block = False
-
+        
         else:
+            # copies all blocks except last, adds block in new position to give illusion of movement
             body_copy = self.body[:-1]
             body_copy.insert(0, body_copy[0] + self.direction)
             self.body = body_copy[:]
