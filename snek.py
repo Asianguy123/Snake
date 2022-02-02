@@ -59,29 +59,40 @@ class Snake():
         self.body_bl = pygame.image.load('Graphics/body_bl.png').convert_alpha()
 
     def draw_snake(self):
+        '''
+        Outputs required snake images, updates head, tail and turning images
+        '''
+
+        # snake head and tail update checks
         self.update_head_graphics()
         self.update_tail_graphics()
 
+        # loops through snake body list to get index and vector
         for index, block in enumerate(self.body):
+            # assigns position on grid and creates block rectangle for display
             x_pos = int(block.x * CELL_SIZE)
             y_pos = int(block.y * CELL_SIZE)
             block_rect = pygame.Rect(x_pos, y_pos, CELL_SIZE, CELL_SIZE)
 
+            # checks if block is head or tail - outputs if so
             if index == 0:
                 SCREEN.blit(self.head, block_rect)
             elif index == len(self.body) - 1:
                 SCREEN.blit(self.tail, block_rect)
 
             else:
+                # gets previous and next block in body
                 previous_block = self.body[index + 1] - block
                 next_block = self.body[index - 1] - block
 
+                # check to see if in straight line, if so outputs vertical/horizontal image
                 if previous_block.x == next_block.x:
                     SCREEN.blit(self.body_vertical, block_rect)
                 elif previous_block.y == next_block.y:
                     SCREEN.blit(self.body_horizontal, block_rect)
 
                 else:
+                    # checks for turns based on vector directions of blocks, outputs appropriate image
                     if (previous_block.x == -1 and next_block.y == -1) or (previous_block.y == -1 and next_block.x == -1):
                         SCREEN.blit(self.body_tl, block_rect)
                     elif (previous_block.x == -1 and next_block.y == 1) or (previous_block.y == 1 and next_block.x == -1):
