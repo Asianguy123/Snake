@@ -6,12 +6,23 @@
 import sys
 import pygame
 import random
-from pygame.math import Vector2
+from pygame.math import Vector2 # easier to manipulate and use than lists
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Classes
 
 class Snake():
+
+    '''
+    SNAKE CLASS:
+
+    - Creates snake
+    - Handles output and image sorting
+    - Snake movement
+    - Snake growth
+    - Snake reset
+    '''
+
     def __init__(self):
         self.body = [Vector2(20, 20), Vector2(19, 20), Vector2(18, 20)]
         self.direction = Vector2(0, 0)
@@ -115,6 +126,14 @@ class Snake():
         
 
 class Fruit():
+
+    '''
+    FRUIT CLASS:
+
+    - Displays fruit
+    - Gives fruit random position on grid
+    '''
+
     def __init__(self):
         self.randomise()
 
@@ -129,6 +148,16 @@ class Fruit():
 
 
 class Main():
+
+    '''
+    MAIN CLASS:
+
+    - Manages all game logic
+    - Controls all game updates
+    - Outputs main game
+    - Checks for game over conditions
+    '''
+
     def __init__(self):
         self.snake = Snake()
         self.fruit = Fruit()
