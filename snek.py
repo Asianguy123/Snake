@@ -158,9 +158,17 @@ class Snake():
         self.new_block = True
 
     def play_sound(self):
+        '''
+        Outputs crunch noise when fruit has been eaten
+        '''
+
         self.crunch_sound.play()
 
     def reset(self):
+        '''
+        Sets snake back to 3 blocks, and at default position on grid with no direction
+        '''
+
         self.body = [Vector2(20, 20), Vector2(19, 20), Vector2(18, 20)]
         self.direction = Vector2(0, 0)
         
