@@ -151,6 +151,10 @@ class Snake():
             self.body = body_copy[:]
 
     def add_block(self):
+        '''
+        Signals that a fruit has been eaten and that the snake must increase in size
+        '''
+
         self.new_block = True
 
     def play_sound(self):
