@@ -25,7 +25,7 @@ class Snake():
 
     def __init__(self):
         '''
-        Instantiates snake object with:
+        Initiates snake object with:
         
         - all required images
         - an initial 3 block body (with head at centre facing right)
@@ -183,6 +183,10 @@ class Fruit():
     '''
 
     def __init__(self):
+        '''
+        Initiates fruit object with a random grid position
+        '''
+
         self.randomise()
 
     def draw_fruit(self):
