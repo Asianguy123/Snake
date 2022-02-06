@@ -190,6 +190,10 @@ class Fruit():
         self.randomise()
 
     def draw_fruit(self):
+        '''
+        Makes fruit object rect and outputs to position
+        '''
+
         fruit_rect = pygame.Rect(int(self.pos.x * CELL_SIZE), int(self.pos.y * CELL_SIZE), CELL_SIZE, CELL_SIZE)
         SCREEN.blit(apple, fruit_rect)
 
