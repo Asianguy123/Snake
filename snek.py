@@ -227,6 +227,14 @@ class Main():
         self.fruit = Fruit()
 
     def update(self):
+        '''
+        Game updates:
+        
+        - moves snake
+        - checks for fruit eaten
+        - checks if game lost
+        '''
+
         self.snake.move_snake()
         self.check_fruit_collision()
         self.check_fail()
