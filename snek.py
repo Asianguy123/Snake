@@ -198,6 +198,10 @@ class Fruit():
         SCREEN.blit(apple, fruit_rect)
 
     def randomise(self):
+        '''
+        Assigns random x and y value, stores as position vector
+        '''
+
         self.x = random.randint(0, CELL_NUMBER - 1)
         self.y = random.randint(0, CELL_NUMBER - 1) 
         self.pos = Vector2(self.x, self.y)
