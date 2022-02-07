@@ -219,6 +219,10 @@ class Main():
     '''
 
     def __init__(self):
+        '''
+        Initiates main object, with snake and fruit as properties
+        '''
+
         self.snake = Snake()
         self.fruit = Fruit()
 
