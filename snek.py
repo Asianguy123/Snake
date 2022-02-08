@@ -240,47 +240,85 @@ class Main():
         self.check_fail()
 
     def draw_elements(self):
+        '''
+        Displays:
+
+        - grass grid
+        - fruit image
+        - snake images
+        - score
+        '''
+
         self.draw_grass()
         self.fruit.draw_fruit()
         self.snake.draw_snake()
         self.draw_score()
 
     def check_fruit_collision(self):
+        '''
+        Checks if fruit is eaten by snake
+        '''
+
+        # if fruit position is the same as the snake's head
         if self.fruit.pos == self.snake.body[0]:
+            # play eating noise, get new fruit, extend snake length
             self.snake.play_sound()
             self.fruit.randomise()
             self.snake.add_block()
         
+        # if fruit is generated on snake body, fruit repositioned
         for block in self.snake.body[1:]:
             if block == self.fruit.pos:
                 self.fruit.randomise()
 
     def check_fail(self):
+        '''
+        Game over check
+        '''
+
+        # condition for snake hitting grid boundary
         if not (0 <= self.snake.body[0].x < CELL_NUMBER) or not (0 <= self.snake.body[0].y < CELL_NUMBER):
             self.game_over()
         
+        # checks if snake head collides with body
         for block in self.snake.body[1:]:
             if block == self.snake.body[0]:
                 self.game_over()
 
     def game_over(self):
+        '''
+        Game over, reset game and snake
+        '''
+
         self.snake.reset()
 
     def draw_grass(self):
+        '''
+        Displays alternating grass grid background
+        '''
+
         grass_colour = (167, 209, 61)
         for row in range(CELL_NUMBER):
+            # even rows, outputs at even columns
             if row % 2 == 0:
                 for col in range(CELL_NUMBER):
                     if col % 2 == 0:
                         grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                         pygame.draw.rect(SCREEN, grass_colour, grass_rect)
+
             else:
+                # odd rows, outputs at odd columns
                 for col in range(CELL_NUMBER):
                     if col % 2:
                         grass_rect = pygame.Rect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                         pygame.draw.rect(SCREEN, grass_colour, grass_rect)
 
     def draw_score(self):
+        '''
+        Displays score and score apple image
+        '''
+
+        # score = apples eaten, apple position relative to score position
         score_text = str(len(self.snake.body) - 3)
         score_surf = game_font.render(score_text, 1, (0, 0, 0))
         score_x = int(CELL_SIZE * CELL_NUMBER) - 60
@@ -296,19 +334,27 @@ class Main():
 # Main Function
 
 def main():
-    timer = 80
+    '''
+    Main game function, manages user input, calls outputs and game updates
+    '''
+
+    # game speed and update configuration - reduce TIMER to increase speed
+    TIMER = 80
     SCREEN_UPDATE = pygame.USEREVENT
-    pygame.time.set_timer(SCREEN_UPDATE, timer)
+    pygame.time.set_timer(SCREEN_UPDATE, TIMER)
 
     while True:
         for event in pygame.event.get():
+            # game close
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
+            # updates game
             if event.type == SCREEN_UPDATE:
                 main_game.update()
 
+            # user input - up, down, right, left; applies vector if not already going in chosen direction
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     if main_game.snake.direction.y != 1:
@@ -325,7 +371,8 @@ def main():
                 if event.key == pygame.K_LEFT:
                     if main_game.snake.direction.x != 1:
                         main_game.snake.direction = Vector2(-1, 0)
-                
+
+        # display   
         SCREEN.fill((175, 215, 70))
         main_game.draw_elements()
         pygame.display.update()
