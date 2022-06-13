@@ -3,6 +3,10 @@ Snake made with Python3
 
 Classic Snake game, made for Python and pygame practice
 
+## Credits
+Based on following tutorial: https://www.youtube.com/watch?v=QFvqStqPCRU
+Art and original project file: github.com/clear-code-projects/Snake
+
 # How to Run
 Download zip file and extract.
 
