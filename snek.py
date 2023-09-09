@@ -389,7 +389,7 @@ CELL_NUMBER = 40
 SCREEN_WIDTH = CELL_NUMBER * CELL_SIZE
 SCREEN_HEIGHT = CELL_NUMBER * CELL_SIZE
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('Snek | Asianguy_123')
+pygame.display.set_caption('Snek | Sunain Syed')
 main_game = Main()
 apple = pygame.image.load('Graphics/apple.png').convert_alpha()
 game_font = pygame.font.Font('Font/PoetsenOne-Regular.ttf', 25)
